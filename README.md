@@ -1,6 +1,9 @@
 # draw_custom_shapes_example
 
-A new Flutter project.
+<p>
+  <img src="https://github.com/guicastle/draw_custom_shapes_example/assets/image.JPG" 
+  width="350px">
+</p>
 
 ## Getting Started
 

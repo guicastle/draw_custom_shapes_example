@@ -24,29 +24,6 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class CircleOval extends CustomPainter {
-  @override
-  void paint(Canvas canvas, Size size) {
-    var paint = Paint();
-    paint.color = Colors.green;
-    paint.style = PaintingStyle.fill;
-
-    Path path = Path()
-      ..addOval(Rect.fromPoints(Offset(0, 0), Offset(60, 60)))
-      ..addOval(Rect.fromLTWH(0, size.height - 50, 100, 50))
-      ..addOval(Rect.fromCircle(
-          center: Offset(size.width / 2, size.height / 2), radius: 20))
-      ..close();
-
-    canvas.drawPath(path, paint);
-  }
-
-  @override
-  bool shouldRepaint(CustomPainter oldDelegate) {
-    return true;
-  }
-}
-
 class CurvePainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
@@ -87,6 +64,29 @@ class CurvePainterBottom extends CustomPainter {
         size.width * 1.0, size.height * 0.9167);
     path.lineTo(size.width, size.height);
     path.lineTo(0, size.height);
+
+    canvas.drawPath(path, paint);
+  }
+
+  @override
+  bool shouldRepaint(CustomPainter oldDelegate) {
+    return true;
+  }
+}
+
+class CircleOval extends CustomPainter {
+  @override
+  void paint(Canvas canvas, Size size) {
+    var paint = Paint();
+    paint.color = Colors.green;
+    paint.style = PaintingStyle.fill;
+
+    Path path = Path()
+      ..addOval(Rect.fromPoints(const Offset(156, 0), const Offset(300, 300)))
+      ..addOval(Rect.fromLTWH(0, size.height - 50, 100, 50))
+      ..addOval(Rect.fromCircle(
+          center: Offset(size.width / 2, size.height / 2), radius: 56))
+      ..close();
 
     canvas.drawPath(path, paint);
   }
